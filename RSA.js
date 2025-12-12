@@ -32,18 +32,17 @@ function eiler(c) {
    
 
 function decrypt() {
-let amod = +prompt("A Модуль")
-let bmod = +prompt("B Модуль")
+let amod = +prompt("A(p) Модуль ")
+let bmod = +prompt("B(q) Модуль ")
 let mod = amod * bmod
-let e = +prompt("Степень")
+let e = +prompt("Степень(e) ")
 let d = reverse(e, eiler(mod))
 
-//let mes = prompt("Сообщение").split(" ").map((x)=>+x)
-
+let mes = prompt("Сообщение (через пробел) ").split(" ").map((x)=>+x)
 let ans = ''
 
-for (let i = 0; i < globarr.length; i++) {
-    ans += String.fromCharCode(Number((BigInt(globarr[i]) ** BigInt(d)) % BigInt(mod)))
+for (let i = 0; i < mes.length; i++) {
+    ans += String.fromCharCode(Number((BigInt(mes[i]) ** BigInt(d)) % BigInt(mod)))
 }
 return console.log(ans)
 }
