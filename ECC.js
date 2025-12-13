@@ -13,7 +13,6 @@ function someeuq(a, mod) {
       mod = a % mod
       a = buff
       if (mod == 0) {
-          console.log("Числа не взаимно простые")
           return mod
       }
     }
@@ -74,8 +73,8 @@ function calc() {
                 console.log(arr[w.charCodeAt() - 65])
                 }
                 else {
-                   l_1 = ((((arr[w.charCodeAt() - 65][1] - before[0][1]) % mod) + mod) % mod == 0) ? 1 : (((arr[w.charCodeAt() - 65][1] - before[0][1]) % mod) + mod) % mod
-                   l_2 = (((someeuq(((arr[w.charCodeAt() - 65][0] - before[0][0]) + mod) % mod, mod) + mod) % mod) == 0) ? 1 : ((someeuq(((arr[w.charCodeAt() - 65][0] - before[0][0]) + mod) % mod, mod) + mod) % mod)
+                   l_1 = ((((arr[w.charCodeAt() - 65][1] - before[0][1]) % mod) + mod) % mod == 0) ? 0 : (((arr[w.charCodeAt() - 65][1] - before[0][1]) % mod) + mod) % mod
+                   l_2 = (((someeuq(((arr[w.charCodeAt() - 65][0] - before[0][0]) + mod) % mod, mod) + mod) % mod) == 0) ? 0 : ((someeuq(((arr[w.charCodeAt() - 65][0] - before[0][0]) + mod) % mod, mod) + mod) % mod)
                    l = (l_1 * l_2) % mod
                    x_3 = ((((l ** 2) - (arr[w.charCodeAt() - 65][0] + before[0][0])) % mod) + mod) % mod
                    y_3 = ((((l * (arr[w.charCodeAt() - 65][0] - x_3)) - arr[w.charCodeAt() - 65][1]) % mod) + mod) % mod
@@ -104,8 +103,8 @@ function calc() {
      else if (ans == 2) {
          w1 = prompt("Название 1 координаты?")
          w2 = prompt("Название 2 координаты?")
-         l_1 = ((((arr[w1.charCodeAt() - 65][1] - arr[w2.charCodeAt() - 65][1]) % mod) + mod) % mod == 0) ? 1 : (((arr[w1.charCodeAt() - 65][1] - arr[w2.charCodeAt() - 65][1]) % mod) + mod) % mod
-                   l_2 = (((((arr[w1.charCodeAt() - 65][0] - arr[w2.charCodeAt() - 65][0]) + mod) % mod + mod) % mod) == 0) ? 1 : ((someeuq(((arr[w1.charCodeAt() - 65][0] - arr[w2.charCodeAt() - 65][0]) + mod) % mod, mod) + mod) % mod)
+         l_1 = ((((arr[w1.charCodeAt() - 65][1] - arr[w2.charCodeAt() - 65][1]) % mod) + mod) % mod == 0) ? 0 : (((arr[w1.charCodeAt() - 65][1] - arr[w2.charCodeAt() - 65][1]) % mod) + mod) % mod
+                   l_2 = (((((arr[w1.charCodeAt() - 65][0] - arr[w2.charCodeAt() - 65][0]) + mod) % mod + mod) % mod) == 0) ? 0 : ((someeuq(((arr[w1.charCodeAt() - 65][0] - arr[w2.charCodeAt() - 65][0]) + mod) % mod, mod) + mod) % mod)
                    l = (l_1 * l_2) % mod
                    x_3 = ((((l ** 2) - (arr[w1.charCodeAt() - 65][0] + arr[w2.charCodeAt() - 65][0])) % mod) + mod) % mod
                    y_3 = ((((l * (arr[w1.charCodeAt() - 65][0] - x_3)) - arr[w1.charCodeAt() - 65][1]) % mod) + mod) % mod
